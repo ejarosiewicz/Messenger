@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion "21.1.2"
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    defaultConfig {
+        applicationId "ej.com.messenger"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("../debug.keystore")
+            storePassword "android"
+            keyAlias "my_alias"
+            keyPassword "android"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'com.android.support:recyclerview-v7:22.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.j256.ormlite:ormlite-android:4.46'
+}
+
+
+
+
+task generatePom << {
+    pom {
+        project {
+            groupId 'ej.com.messenger'
+            artifactId 'Messenger'
+            version '1.0'
+            packaging 'apk'
+            inceptionYear '2016'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+        }
+    }.withXml {
+        def dependenciesNode = asNode().appendNode('dependencies')
+
+        configurations.compile.allDependencies.each { dependency ->
+            def dependencyNode = dependenciesNode.appendNode('dependency')
+            dependencyNode.appendNode('groupId', dependency.group)
+            dependencyNode.appendNode('artifactId', dependency.name)
+            dependencyNode.appendNode('version', dependency.version)
+        }
+    }.writeTo("$buildDir/pom.xml")
+}

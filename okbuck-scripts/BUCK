@@ -1,0 +1,7 @@
+python_binary(
+	name = 'manifest',
+	main = 'manifest.py',
+	visibility = [
+		'PUBLIC',
+	],
+)

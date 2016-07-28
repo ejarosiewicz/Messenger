@@ -1,0 +1,197 @@
+android_resource(
+	name = 'res_main',
+	res = 'src/main/res',
+	package = 'ej.com.messages',
+	deps = [
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_resource(
+	name = 'res_debug',
+	res = 'src/debug/res',
+	package = 'ej.com.messages',
+	deps = [
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_resource(
+	name = 'res_release',
+	res = 'src/release/res',
+	package = 'ej.com.messages',
+	deps = [
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_build_config(
+	name = 'build_config_debug',
+	package = 'ej.com.messages',
+	values = [
+		'String VERSION_NAME = "1.0"',
+		'String APPLICATION_ID = "ej.com.messenger"',
+		'String BUILD_TYPE = "debug"',
+		'int VERSION_CODE = 1',
+		'String FLAVOR = "default"',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_build_config(
+	name = 'build_config_release',
+	package = 'ej.com.messages',
+	values = [
+		'String VERSION_NAME = "1.0"',
+		'String APPLICATION_ID = "ej.com.messenger"',
+		'String BUILD_TYPE = "release"',
+		'int VERSION_CODE = 1',
+		'String FLAVOR = "default"',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_library(
+	name = 'src_debug',
+	srcs = glob([
+		'src/main/java/**/*.java',
+	]),
+	annotation_processors = [
+	],
+	annotation_processor_deps = [
+	],
+	deps = [
+		':res_main',
+		':res_debug',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__converter-gson-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__ormlite-core-4.46.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__adapter-rxjava-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__okhttp-3.2.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__okio-1.6.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__rxandroid-0.24.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__gson-2.6.1.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__ormlite-android-4.46.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__rxjava-1.1.1.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__retrofit-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__picasso-2.5.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__support-annotations-22.1.1.jar',
+		':build_config_debug',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_library(
+	name = 'src_release',
+	srcs = glob([
+		'src/main/java/**/*.java',
+	]),
+	annotation_processors = [
+	],
+	annotation_processor_deps = [
+	],
+	deps = [
+		':res_main',
+		':res_release',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__converter-gson-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__ormlite-core-4.46.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__adapter-rxjava-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__okhttp-3.2.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__okio-1.6.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__rxandroid-0.24.0.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__gson-2.6.1.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__ormlite-android-4.46.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__rxjava-1.1.1.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__retrofit-2.0.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__picasso-2.5.2.jar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:jar__support-annotations-22.1.1.jar',
+		':build_config_release',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+project_config(
+	src_target = '//app:src',
+	src_roots = [
+		'src/main/java',
+	],
+)
+
+genrule(
+	name = 'generate_manifest_main',
+	srcs = [
+		'src/main/AndroidManifest.xml',
+	],
+	out = 'AndroidManifest.xml',
+	bash = '$(exe //okbuck-scripts:manifest) $SRCDIR/src/main/AndroidManifest.xml $OUT 1.0 1 16 22 true',
+)
+
+android_manifest(
+	name = 'manifest',
+	skeleton = ':generate_manifest_main',
+	deps = [
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__appcompat-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__recyclerview-v7-22.1.1.aar',
+		'//.okbuck/AFFB34D18189F4D10144A341628B7C81:aar__support-v4-22.1.1.aar',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_binary(
+	name = 'bin_debug',
+	manifest = ':manifest',
+	keystore = '//.okbuck/app_keystore:key_store_debug',
+	deps = [
+		':src_debug',
+		':res_main',
+		':res_debug',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+android_binary(
+	name = 'bin_release',
+	manifest = ':manifest',
+	keystore = '//.okbuck/app_keystore:key_store_release',
+	deps = [
+		':src_release',
+		':res_main',
+		':res_release',
+	],
+	visibility = [
+		'PUBLIC',
+	],
+)
+

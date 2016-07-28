@@ -1,0 +1,81 @@
+#
+# generated on 2015/05/17 12:00:23
+#
+# --table-start--
+dataClass=ej.com.messages.model.database.Pojo
+tableName=pojo
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=description
+# --field-end--
+# --field-start--
+fieldName=messages
+foreignCollection=true
+# --field-end--
+# --field-start--
+fieldName=saloons
+foreignCollection=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=ej.com.cars.model.database.Message.Car
+tableName=messages
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=pojo
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=capacity
+# --field-end--
+# --field-start--
+fieldName=year
+# --field-end--
+# --field-start--
+fieldName=type
+# --field-end--
+# --field-start--
+fieldName=photo
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=ej.com.messages.model.database.Saloon
+tableName=saloon
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=pojo
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=lon
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=lat
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

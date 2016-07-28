@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="ErrorDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/PopDialogAnimation</item>
+    </style>
+
+    <style name="PopDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+</resources>

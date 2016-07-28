@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="mobiWhite">#FFFFFF</color>
+    <color name="mobiGreen">#2F00E2</color>
+    <color name="mobiBlue">#DD0000</color>
+    <color name="mobiBlueLight">#FF5555</color>
+    <color name="red">#DD0000</color>
+    <color name="green">#00aa00</color>
+
+</resources>

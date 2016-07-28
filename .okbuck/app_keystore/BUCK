@@ -1,0 +1,18 @@
+keystore(
+	name = 'key_store_debug',
+	store = 'app_debug.keystore',
+	properties = 'app_debug.keystore.properties',
+	visibility = [
+		'PUBLIC',
+	],
+)
+
+keystore(
+	name = 'key_store_release',
+	store = 'app_release.keystore',
+	properties = 'app_release.keystore.properties',
+	visibility = [
+		'PUBLIC',
+	],
+)
+
