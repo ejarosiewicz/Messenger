@@ -3,16 +3,13 @@ package ej.com.messenger.model.database;
 import java.util.ArrayList;
 
 /**
- * Created by 3mill on 2015-05-11.
+ * @author Emil Jarosiewicz on 2015-05-11.
  */
 public class Pojo {
 
     private int id;
-
     private String name;
-
     private ArrayList<Message> messages;
-
     private ArrayList<String> users;
 
     public int getId() {

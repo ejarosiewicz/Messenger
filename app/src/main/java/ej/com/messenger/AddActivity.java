@@ -20,14 +20,14 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by ejarosiewicz on 2015-05-13.
+ * @author Emil Jarosiewicz on 2015-05-13.
  */
 public class AddActivity extends Activity implements View.OnClickListener {
 
     Spinner contactSpinner;
     EditText messageEdit;
-    private Button addButton;
 
+    private Button addButton;
 
     public static void start(Context context) {
         Intent starter = new Intent(context, AddActivity.class);
@@ -40,9 +40,6 @@ public class AddActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_add);
         uiSetup();
         fetchSpinner();
-        for(;;){
-            break;
-        }
     }
 
     private void uiSetup() {
@@ -53,7 +50,7 @@ public class AddActivity extends Activity implements View.OnClickListener {
     }
 
     private void fetchSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.item_spinner, DataHolder.getInstance().getPojo().getUsers());
        contactSpinner.setAdapter(adapter);
     }

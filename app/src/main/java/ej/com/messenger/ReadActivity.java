@@ -3,16 +3,14 @@ package ej.com.messenger;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.widget.TextView;
 
 import ej.com.messenger.model.database.Message;
 import ej.com.messages.R;
 
 /**
- * Created by emil on 26.04.16.
+ * @author Emil Jarosiewicz on 26.04.16.
  */
 public class ReadActivity extends Activity {
 
@@ -41,7 +39,6 @@ public class ReadActivity extends Activity {
     }
 
     private void prepareMessage() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         Message message = (Message) getIntent().getSerializableExtra(MESSAGE);
         sender.setText(message.getSender());
         messageContent.setText(message.getMessage());

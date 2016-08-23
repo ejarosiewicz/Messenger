@@ -16,26 +16,20 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 /**
- * Created by 3mill on 2015-05-12.
+ * @author Emil Jarosiewicz on 2015-05-12.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.NormalViewHolder>
-implements AdapterView.OnItemClickListener{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.NormalViewHolder>{
+
     private final MainActivity mainActivity;
     private ArrayList<Message> messageList;
-    private int lastPosition = -1;
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    public static class NormalViewHolder extends RecyclerView.ViewHolder {
+    static class NormalViewHolder extends RecyclerView.ViewHolder {
 
         // each data item is just a string in this case
-        public TextView sender;
+        TextView sender;
         public TextView message;
 
-        public NormalViewHolder(View v) {
+        NormalViewHolder(View v) {
             super(v);
             sender = (TextView) v.findViewById(R.id.sender);
             message = (TextView) v.findViewById(R.id.message);
@@ -55,6 +49,7 @@ implements AdapterView.OnItemClickListener{
         NormalViewHolder vh;
         v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_message, parent, false);
         vh = new NormalViewHolder(v);
+
         return vh;
     }
 
@@ -67,14 +62,13 @@ implements AdapterView.OnItemClickListener{
         holder.message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ReadActivity.start(mainActivity,messageList.get(position));
+                ReadActivity.start(mainActivity, messageList.get(position));
             }
         });
-
     }
 
-    private String validateMessage(String message){
-        return message.length()<200 ? message : message.substring(0,196)+"...";
+    private String validateMessage(String message) {
+        return message.length() < 200 ? message : message.substring(0, 196) + "...";
     }
 
     @Override

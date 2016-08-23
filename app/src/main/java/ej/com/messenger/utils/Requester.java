@@ -10,7 +10,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by emil on 21.04.16.
+ * @author Emil Jarosiewicz on 21.04.16.
  */
 public class Requester {
 
@@ -18,7 +18,6 @@ public class Requester {
     private Retrofit retrofit;
     private Gson gson;
     private ApiInterface apiInterface;
-    private Pojo pojo;
 
     private Requester(){
         requestSetup();
@@ -28,6 +27,7 @@ public class Requester {
         if (requester == null) {
             requester = new Requester();
         }
+
         return requester;
     }
 

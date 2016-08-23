@@ -58,7 +58,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
     }
 
-
     @Override
     public void onClick(View view) {
         String login = loginEdit.getText().toString();

@@ -1,6 +1,5 @@
 package ej.com.messenger;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +17,7 @@ import ej.com.messages.R;
 import static android.view.View.*;
 
 /**
- * Created by 3mill on 2015-05-11.
+ * @author Emil Jarosiewicz on 2015-05-11.
  */
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -37,8 +36,6 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_main);
         viewSetup();
         prepareData();
-
-
     }
 
     private void viewSetup() {

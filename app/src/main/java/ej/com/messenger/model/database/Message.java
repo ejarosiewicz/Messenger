@@ -3,7 +3,7 @@ package ej.com.messenger.model.database;
 import java.io.Serializable;
 
 /**
- * Created by 3mill on 2015-05-11.
+ * @author Emil Jarosiewicz on 2015-05-11.
  */
 public class Message implements Serializable{
 
@@ -21,10 +21,6 @@ public class Message implements Serializable{
 
     public String getSender() {
         return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
     }
 
     public String getMessage() {
