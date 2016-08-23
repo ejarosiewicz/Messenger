@@ -44,9 +44,6 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:4.46'
 }
 
-
-
-
 task generatePom << {
     pom {
         project {
